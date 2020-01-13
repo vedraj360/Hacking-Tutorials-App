@@ -1,0 +1,102 @@
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:shimmer="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:wheel="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/coordinator"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="visible">
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmerlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:background="@color/black"
+        shimmer:duration="2000">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/cimg"
+                android:layout_width="190dp"
+                android:layout_height="190dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/icon"
+                tools:targetApi="o" />
+
+            <TextView
+                android:id="@+id/shimertex"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cimg"
+                android:background="@color/black"
+                android:gravity="center"
+                android:text="New Updates Daily"
+                android:textColor="#fff"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+    <com.tuesda.walker.circlerefresh.CircleRefreshLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:visibility="gone"
+        app:AniBackColor="@color/materialcolor"
+        app:AniForeColor="#d7fcfcfc"
+        app:CircleSmaller="6">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/infolist"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:scrollbars="vertical"
+            android:visibility="visible" />
+
+
+    </com.tuesda.walker.circlerefresh.CircleRefreshLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.pnikosis.materialishprogress.ProgressWheel
+            android:id="@+id/progress_wheel"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            wheel:matProg_barColor="#e0e3e9"
+            wheel:matProg_progressIndeterminate="true" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="117dp"
+            android:visibility="gone"
+            app:srcCompat="@drawable/wifi" />
+
+
+    </RelativeLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>
+
